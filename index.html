@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vella's Sweet Seventeen Invitation</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Carattere&family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+    <script defer src="app.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+</head>
+<body id="body">
+    <div id="cover" class="">
+        <div class="background">
+            <img src="assets/vella-onboarding1.png" class="vella-onboarding1" alt="background photo">
+            <div class="gradient"></div>
+        </div>
+        <div class="container">
+            <div class="top-content">
+                <h3 id="invited-name-main" class="hidden animatedText">Dear <span id="invited-name"></span>,</h3>
+                <h3 class="animatedText">You are invited to</h3>
+            </div>
+            <div class="mid-content">
+                <h1 class="animateIn animatedText">Vella Denata's</h1>
+                <h3 class="animateIn animatedText">Sweet Seventeen Birthday Dinner</h3>
+            </div>
+            <button class="submit-btn animatedText" onclick="return openInvitation()">Open Invitation</button>
+        </div>
+    </div>
+    <div class="content">
+        <audio autoplay loop id="my-audio"> 
+            <source src= "assets/song.mp3" type="audio/mp3"> 
+        </audio> 
+        <div class="top-details" id="top-details">
+            <img class="bg-top" src="assets/vella-invitation-bg.png" alt="background picture">
+            <div id="hide-placetime-scroll"  class="place-time-container hide-placetime-scroll hidden-scroll">
+                <h1 >Place & Time</h1>
+                <div class="time ">
+                    <p>Saturday, December 16th, 2023</p>
+                    <p>17:00 WIB - End</p>
+                </div>
+                <div class="place">
+                    <h3>Ibis Styles Tanah Abang, 2<sup>nd</sup> Floor</h3>
+                    <p>Jl. H. Fachrudin No.22, RT.9/RW.5, Kp. Bali,<br>Kec. Tanah Abang, Kota Jakarta Pusat</p>
+                </div>
+                <div class="map">
+                    <a target="_blank" href="https://maps.app.goo.gl/4YbsPsucN1MiF16BA" class="hide-placetime4-scroll hidden-scroll">
+                        <p>View Location</p>
+                        <img src="assets/arrow-right.svg" alt="" srcset="">
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="dresscode ">
+            <img src="assets/woman-navy.png" class="hide-image1-scroll hidden-scroll" alt="Female navy dresscode">
+            <div class="dresscode-text">
+                <h2 class="hide-dresscode-title1-scroll hidden-scroll">Dresscode</h2>
+                <p class="hide-dresscode-title2-scroll hidden-scroll">Navy Blue</p>
+            </div>
+            <img src="assets/man-navy.png" class="hide-image2-scroll hidden-scroll" alt="Male navy dresscode">
+        </div>
+        <div class="rsvp" id="rsvpFormContainer">
+            <!-- <form action="https://sheetdb.io/api/v1/sy47pmrrlz9a6" method="post" id="sheetdb-form"> -->
+            <form id="sheetdb-form">
+                <h2 class="hide-rsvp1-scroll hidden-scroll">RSVP</h2>
+                <div class="form-fullname">
+                    <p for="fullname" class="hide-rsvp2-scroll hidden-scroll">Full Name <span style="color: red;">*</span></p>
+                    <input type="text" class="fullname hide-rsvp3-scroll hidden-scroll" name="data[fullname]" id="fullname" placeholder="Full Name" required minlength="3">
+                </div>
+                <div class="form-confirmation">
+                    <p class="hide-rsvp4-scroll hidden-scroll">Will you join the dinner? <span style="color: red;">*</span></p>
+                    <div class="rsvp-confirmation hide-rsvp5-scroll hidden-scroll">
+                        <input type="radio" name="data[confirmation]" value="YES" id="confirmation-yes" required>
+                        <label for="confirmation-yes">Absolutely, Yes!</label>
+                    </div>
+                    <div class="rsvp-confirmation hide-rsvp6-scroll hidden-scroll">
+                        <input type="radio" name="data[confirmation]" value="NO" id="confirmation-no" required>
+                        <label for="confirmation-no">I'd love to, but I can't</label>
+                    </div>
+                </div>
+                <button type="submit">
+                    <span id="btn-submit-1"><i class="fa fa-spinner fa-spin"></i>Processing</span>
+                    <span id="btn-submit-0">Submit</span>
+                </button>
+            </form>
+            <div id="success-state">
+                <h2>Thank You</h2>
+                <p>Your RSVP have been submitted successfully.<br>For further information please contact me via Whatsapp!</p>
+            </div>
+        </div>
+        <div class="countdown">
+            <h4 class="">Can't wait to see you in</h4>
+            <div class="countdown-container">
+                <div class="countdown-time">
+                    <p class="number" id="Days">00</p>
+                    <p class="satuan">Days</p>
+                </div>
+                <p class="break">:</p>
+                <div class="countdown-time">
+                    <p class="number" id="Hours">00</p>
+                    <p class="satuan">Hours</p>
+                </div>
+                <p class="break">:</p>
+                <div class="countdown-time">
+                    <p class="number" id="Minutes">00</p>
+                    <p class="satuan">Minutes</p>
+                </div>
+                <p class="break">:</p>
+                <div class="countdown-time">
+                    <p class="number" id="Seconds">00</p>
+                    <p class="satuan">Seconds</p>
+                </div>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>Copyright &copy 2023 by ADA Studio. All right reserved.</p>
+        </div>
+        <img src="assets/ic-pause.svg" id="audio-control" onclick="toggleAudio()">
+    </div>
+    <!-- <script type="text/javascript">
+
+        // var isAudioPlayed = false;
+
+
+
+        function playAudio() {
+            
+            // isAudioPlayed = true;
+            const myAudio = document.getElementById("my-audio");
+            myAudio.play();
+        }
+
+
+        // document.body.onclick = ()=>{
+        //     if(isAudioPlayed) return ;
+            playAudio();
+        // }
+
+    </script> -->
+</body>
+</html>
